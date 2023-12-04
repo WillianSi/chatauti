@@ -153,7 +153,7 @@ class MyAppState extends State<MyApp> {
     setState(() {
       messages.add(Message(
         type: 'answer',
-        content: 'Olá, sou ZailTea assistente virtual para informar sobre a autismo!',
+        content: 'Olá, tudo bem. Eu sou o ZailTEA e estou aqui para auxiliar sobre suas dúvidas em relação ao Transtorno do Expectro do Autismo (TEA)',
       ));
     });
   }
