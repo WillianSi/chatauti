@@ -28,9 +28,10 @@ class MyAppState extends State<MyApp> {
 
   void _launchUrl(String url) async {
     try {
+      // ignore: deprecated_member_use
       await launch(url);
     } catch (e) {
-      print('Error launching $url: $e');
+      url;
     }
   }
 
@@ -100,8 +101,7 @@ class MyAppState extends State<MyApp> {
                                 onOpen: (link) => _launchUrl(link.url),
                                 text: message.content,
                                 style: const TextStyle(color: Colors.white),
-                                linkStyle:
-                                    const TextStyle(color: Colors.blueGrey),
+                                linkStyle: const TextStyle(color: Colors.blueGrey),
                               ),
                             ),
                           ),
@@ -203,10 +203,10 @@ class MyAppState extends State<MyApp> {
           });
         }
       } else {
-        print("Error: ${response.statusCode}");
+        response.statusCode;
       }
     } catch (error) {
-      print("Error: $error");
+      error;
     } finally {
       setState(() {
         isWaitingForAnswer = false;
@@ -221,7 +221,7 @@ class MyAppState extends State<MyApp> {
   }
 
   void scrollToBottom() {
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       scrollController.animateTo(
         scrollController.position.maxScrollExtent,
         duration: const Duration(milliseconds: 700),
